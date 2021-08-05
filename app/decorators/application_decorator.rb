@@ -1,4 +1,5 @@
 class ApplicationDecorator < SimpleDelegator
+  include RoutesHelper
 
   def self.decorate(obj)
     new(obj)
