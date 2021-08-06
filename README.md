@@ -14,6 +14,10 @@ _**config/credentials/development.key**_
 <br>
 `fd56f791474c3e26d152378238c297be`
 
+_**config/credentials/test.key**_
+<br>
+`a0b896270bb8cba250c83abf7fab1843`
+
 _**config/master.key**_
 <br>
 `89c4466ebeb0260180a3a34394260219`

@@ -27,6 +27,7 @@
 /config/database.yml
 /config/master.key
 /config/credentials/development.key
+/config/credentials/test.key
 
 .vscode/
 *~
