@@ -2,6 +2,7 @@ FROM ruby:2.7.1
 
 RUN apt-get install tzdata -y
 
+ENV APP_PORT=3001
 ENV BUNDLER_VERSION=2.2.20
 ENV RUBYOPT='-W:no-deprecated -W:no-experimental'
 
