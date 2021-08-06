@@ -23,7 +23,6 @@ module JustCars
     config.active_job.queue_adapter = :inline
     config.api_only = true
 
-    config.active_record.schema_format = :sql
     config.active_record.time_zone_aware_types = %i[datetime time]
     config.i18n.available_locales = ['en']
     config.time_zone = "Warsaw"
