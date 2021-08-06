@@ -1,0 +1,6 @@
+.DS_Store
+.git*
+log/*
+tmp/*
+Dockerfile
+README.md
