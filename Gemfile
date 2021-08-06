@@ -14,9 +14,6 @@ gem 'pagy'
 
 gem 'pry-rails'
 
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-# gem 'jbuilder', '~> 2.7'
-
 gem 'image_processing', '~> 1.2'
 gem 'rack-cors'
 

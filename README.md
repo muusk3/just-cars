@@ -1,24 +1,46 @@
-# README
+# JUST-CARS API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<br>
 
-Things you may want to cover:
+### **Config**
 
-* Ruby version
+<br>
+<span style="color:red; font-weight:bold;">
+  Normally not included in this file!!!
+</span>
+<hr>
 
-* System dependencies
+_**config/credentials/development.key**_
+<br>
+`fd56f791474c3e26d152378238c297be`
 
-* Configuration
+_**config/master.key**_
+<br>
+`89c4466ebeb0260180a3a34394260219`
 
-* Database creation
+**Request header authorization token for the development purposes:**  `ihiyvBJ0wW2oK8-HO6bC-Ag`
 
-* Database initialization
+<hr>
+<br>
 
-* How to run the test suite
+### **Run**
 
-* Services (job queues, cache servers, search engines, etc.)
+<br>
 
-* Deployment instructions
+**env:**
 
-* ...
+Requirements: Ruby: 2.7.1, PostgreSQL 12+
+
+```bash
+1. bundler
+2. rails db:setup
+3. rails s -p 3000 -b lvh.me
+```
+
+<br>
+
+**docker:**
+
+```
+1. docker-compose up
+```
