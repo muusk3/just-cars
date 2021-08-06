@@ -31,7 +31,7 @@ class OffersController < ApplicationController
 
     def photo_attach_args
       AttachmentFormatterService.data_from_url(
-        offer_params[:photo],
+        permit_params[:photo],
         filename: offer.title.parameterize
       )
     end
@@ -40,7 +40,11 @@ class OffersController < ApplicationController
       OfferSerializer.new(offers).serializable_hash
     end
 
+    def permit_params
+      params.permit(:photo)
+    end
+
     def offer_params
-      params.permit(Offer.column_names - %w[created_at updated_at], :photo)
+      params.permit(Offer.column_names - %w[created_at updated_at])
     end
 end
