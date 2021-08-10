@@ -6,4 +6,6 @@ class Offer < ApplicationRecord
     numericality: { in: 0..10_000_000 }
 
   has_one_attached :photo
+
+  searchkick word_start: [:title]
 end

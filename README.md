@@ -33,7 +33,7 @@ _**config/master.key**_
 
 **env:**
 
-Requirements: Ruby: 2.7.1, PostgreSQL 12+
+Requirements: Ruby: 2.7.1, PostgreSQL 12+, Elasticsearch 6+
 
 ```bash
 1. bundler
@@ -46,5 +46,9 @@ Requirements: Ruby: 2.7.1, PostgreSQL 12+
 **docker:**
 
 ```
-1. docker-compose up
+1. docker-compose up --build
+2. Run commands rake tasks:
+      - docker exec api bundle exec rails db:setup
+      - docker exec api bundle exec rails db:seed
+      - docker exec api rake searchkick:reindex:all
 ```

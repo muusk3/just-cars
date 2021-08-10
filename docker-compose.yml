@@ -19,7 +19,7 @@ services:
     container_name: api
     restart: unless-stopped
     links:
-      - postgres
+      - elasticsearch
     depends_on:
       - postgres
     tty: true
@@ -28,8 +28,29 @@ services:
     networks:
       - just-cars-network
 
+  elasticsearch:
+    image: elasticsearch:7.14.0
+    container_name: elasticsearch
+    environment:
+      - node.name=es01
+      - cluster.name=es-docker-cluster
+      - bootstrap.memory_lock=true
+      - discovery.type=single-node
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - elastic:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+    networks:
+      - just-cars-network
+
 volumes:
   postgres:
+  elastic:
 
 networks:
   just-cars-network:

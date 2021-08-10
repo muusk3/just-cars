@@ -1,10 +1,10 @@
 class OffersController < ApplicationController
 
-  expose(:offers) { Offer.with_attached_photo }
+  expose(:offers) { Queries::OfferSearch.new(permit_params).call }
   expose(:offer)
 
   def index
-    render json: serialize(offers)
+    render json: serialize(offers[:data], meta: offers[:meta])
   end
 
   def show
@@ -36,12 +36,12 @@ class OffersController < ApplicationController
       )
     end
 
-    def serialize(offers)
-      OfferSerializer.new(offers).serializable_hash
+    def serialize(offers, **options)
+      OfferSerializer.new(offers, options).serializable_hash
     end
 
     def permit_params
-      params.permit(:photo)
+      params.permit(:photo, *Queries::OfferSearch::FILTERS)
     end
 
     def offer_params

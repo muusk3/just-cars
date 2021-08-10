@@ -11,6 +11,7 @@ gem 'decent_exposure'
 gem 'jsonapi-serializer'
 gem 'oj'
 gem 'pagy'
+gem 'searchkick'
 
 gem 'pry-rails'
 

@@ -5,6 +5,7 @@ RUN apt-get install tzdata -y
 ENV APP_PORT=3001
 ENV BUNDLER_VERSION=2.2.20
 ENV RUBYOPT='-W:no-deprecated -W:no-experimental'
+ENV ELASTICSEARCH_URL=http://elasticsearch:9200
 
 ENV TZ=Europe/Warsaw
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
